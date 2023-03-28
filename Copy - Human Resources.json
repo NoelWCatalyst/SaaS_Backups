@@ -1,0 +1,176 @@
+
+SHEETS
+{"qInfo":{"qId":"0850c856-b59e-42a7-aac3-f31907a1321f","qType":"sheet"},"qMeta":{"title":"My new sheet","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"0850c856-b59e-42a7-aac3-f31907a1321f","approved":false,"published":true,"owner":"Kya5WRmJdyfJsWK7fzlM91xgtLOaSUmWb9rqu7xZpw0","ownerId":"Og2ApbOee61ta_5qgvdFBa6lieJrZgrK","createdDate":"2023-03-28T16:26:59.585Z","modifiedDate":"2023-03-28T18:08:22.781Z","publishTime":"2023-03-28T18:08:22.781Z","privileges":["read","publish"]},"qData":[]}
+{"qInfo":{"qId":"335cbf5e-3efc-48cd-b80d-be4d96eda9d1","qType":"sheet"},"qMeta":{"title":"Edit Employees","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"335cbf5e-3efc-48cd-b80d-be4d96eda9d1","approved":false,"published":true,"owner":"Kya5WRmJdyfJsWK7fzlM91xgtLOaSUmWb9rqu7xZpw0","ownerId":"Og2ApbOee61ta_5qgvdFBa6lieJrZgrK","createdDate":"2021-11-17T11:20:53.973Z","modifiedDate":"2023-03-28T16:13:44.583Z","publishTime":"2023-03-28T16:13:44.583Z","privileges":["read","publish"]},"qData":[]}
+{"qInfo":{"qId":"e821f3e6-3dc2-4367-8195-018bcbbd5458","qType":"sheet"},"qMeta":{"title":"Annual Leave Requests","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"e821f3e6-3dc2-4367-8195-018bcbbd5458","approved":false,"published":true,"owner":"Kya5WRmJdyfJsWK7fzlM91xgtLOaSUmWb9rqu7xZpw0","ownerId":"Og2ApbOee61ta_5qgvdFBa6lieJrZgrK","createdDate":"2021-11-17T14:11:47.569Z","modifiedDate":"2023-03-28T16:13:15.235Z","publishTime":"2023-03-28T16:13:15.235Z","privileges":["read","publish"]},"qData":[]}
+{"qInfo":{"qId":"c9cacd0b-080a-4506-aa91-b9e3f6e6efc5","qType":"sheet"},"qMeta":{"title":"AA","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"c9cacd0b-080a-4506-aa91-b9e3f6e6efc5","approved":false,"published":false,"owner":"Kya5WRmJdyfJsWK7fzlM91xgtLOaSUmWb9rqu7xZpw0","ownerId":"Og2ApbOee61ta_5qgvdFBa6lieJrZgrK","createdDate":"2021-11-17T15:35:51.762Z","modifiedDate":"2023-03-27T18:24:55.289Z","publishTime":true,"privileges":["read","update","delete","publish"]},"qData":[]}
+{"qInfo":{"qId":"e204c5f5-b5a3-4824-97a9-9ec787ee66e8","qType":"sheet"},"qMeta":{"title":"Summary","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"e204c5f5-b5a3-4824-97a9-9ec787ee66e8","approved":false,"published":true,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.232Z","modifiedDate":"2022-01-11T09:25:40.581Z","publishTime":"2022-01-11T09:25:40.581Z","privileges":["read","publish"]},"qData":[]}
+{"qInfo":{"qId":"5059e76a-1c48-4ce5-8be1-e017c44a01e9","qType":"sheet"},"qMeta":{"title":"HR Report","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"5059e76a-1c48-4ce5-8be1-e017c44a01e9","approved":false,"published":true,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2022-01-07T13:34:32.678Z","modifiedDate":"2022-01-07T15:57:18.482Z","publishTime":"2022-01-07T15:57:11.340Z","privileges":["read","publish"]},"qData":[]}
+{"qInfo":{"qId":"3ecbf000-d8da-498b-9fff-bd92add34158","qType":"sheet"},"qMeta":{"title":"Salary","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"3ecbf000-d8da-498b-9fff-bd92add34158","approved":false,"published":true,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.188Z","modifiedDate":"2022-01-07T15:57:14.688Z","publishTime":"2022-01-07T15:57:14.688Z","privileges":["read","publish"]},"qData":[]}
+{"qInfo":{"qId":"d45c70a7-f430-45fe-979a-1b4558faafae","qType":"sheet"},"qMeta":{"title":"Sickness","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"d45c70a7-f430-45fe-979a-1b4558faafae","approved":false,"published":true,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.372Z","modifiedDate":"2022-01-07T15:23:10.412Z","publishTime":"2022-01-07T15:23:10.412Z","privileges":["read","publish"]},"qData":[]}
+{"qInfo":{"qId":"fc94e681-7f6a-4c63-bc01-f8cf306e5b99","qType":"sheet"},"qMeta":{"title":"Employee List","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"fc94e681-7f6a-4c63-bc01-f8cf306e5b99","approved":false,"published":true,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.193Z","modifiedDate":"2021-12-09T15:01:37.308Z","publishTime":"2021-12-09T15:01:37.308Z","privileges":["read","publish"]},"qData":[]}
+{"qInfo":{"qId":"d8baae85-cd25-44ad-aa01-19322cb6f3c0","qType":"sheet"},"qMeta":{"title":"Training","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"d8baae85-cd25-44ad-aa01-19322cb6f3c0","approved":false,"published":true,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.258Z","modifiedDate":"2021-12-09T14:45:45.871Z","publishTime":"2021-12-09T14:45:45.871Z","privileges":["read","publish"]},"qData":[]}
+{"qInfo":{"qId":"1d7c59a2-c609-48c9-93e7-508c9e008b8d","qType":"sheet"},"qMeta":{"title":"Growth and Organisation","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"1d7c59a2-c609-48c9-93e7-508c9e008b8d","approved":false,"published":true,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.307Z","modifiedDate":"2021-12-09T11:25:41.891Z","publishTime":"2021-12-09T11:25:41.891Z","privileges":["read","publish"]},"qData":[]}
+{"qInfo":{"qId":"7f72965e-861e-427b-ba38-3230beb329c8","qType":"sheet"},"qMeta":{"title":"Annual Leave","description":"","_resourcetype":"app.object","_objecttype":"sheet","id":"7f72965e-861e-427b-ba38-3230beb329c8","approved":false,"published":true,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.337Z","modifiedDate":"2021-12-09T11:25:41.129Z","publishTime":"2021-12-09T11:25:41.129Z","privileges":["read","publish"]},"qData":[]}
+
+OBJECTS ON SHEETS
+{"name":"hPCQ","type":"barchart","col":0,"row":0,"colspan":12,"rowspan":6,"bounds":{"y":0,"x":0,"width":50,"height":50}}
+{"name":"jXJTe","type":"treemap","col":0,"row":6,"colspan":24,"rowspan":6,"bounds":{"y":50,"x":0,"width":100,"height":50}}
+{"name":"sppD","type":"sn-nlg-chart","col":12,"row":0,"colspan":12,"rowspan":6,"bounds":{"y":0,"x":50,"width":50,"height":50}}
+{"name":"e9cbe5e0-8943-4f1f-aa33-b88212ccb8c0","type":"Komment","col":0,"row":2,"colspan":36,"rowspan":16,"bounds":{"y":11.11111111111111,"x":0,"width":100,"height":88.88888888888889}}
+{"name":"a848079e-b840-402f-8fa3-6c2690b91dd9","type":"filterpane","col":0,"row":0,"colspan":31,"rowspan":1,"bounds":{"y":0,"x":0,"width":86.11111111111111,"height":5.555555555555555}}
+{"name":"160633c0-48a5-4800-afa8-239e2959b3fe","type":"action-button","col":34,"row":0,"colspan":2,"rowspan":1,"bounds":{"y":0,"x":94.44444444444444,"width":5.555555555555555,"height":5.555555555555555}}
+{"name":"60975385-0a25-4764-9615-4720af601c86","type":"filterpane","col":0,"row":0,"colspan":31,"rowspan":1,"bounds":{"y":0,"x":0,"width":86.11111111111111,"height":5.555555555555555}}
+{"name":"19351d60-e428-4218-bd3a-0a3f05b576fe","type":"action-button","col":34,"row":0,"colspan":2,"rowspan":1,"bounds":{"y":0,"x":94.44444444444444,"width":5.555555555555555,"height":5.555555555555555}}
+{"name":"ZSk","type":"Komment","col":0,"row":2,"colspan":36,"rowspan":16,"bounds":{"y":11.11111111111111,"x":0,"width":100,"height":88.88888888888889}}
+{"name":"BJgZJGv","type":"table","col":0,"row":0,"colspan":20,"rowspan":9,"bounds":{"y":0,"x":0,"width":83.33333333333334,"height":75}}
+{"name":"PKPqaUw","type":"kpi","col":20,"row":0,"colspan":4,"rowspan":6,"bounds":{"y":0,"x":83.33333333333334,"width":16.666666666666664,"height":50}}
+{"name":"FzxjMzg","type":"map","col":18,"row":2,"colspan":18,"rowspan":16,"bounds":{"y":11.11111111111111,"x":50,"width":50,"height":88.88888888888889}}
+{"name":"RXJLn","type":"filterpane","col":0,"row":0,"colspan":26,"rowspan":1,"bounds":{"y":0,"x":0,"width":72.22222222222221,"height":5.555555555555555}}
+{"name":"SWjgs","type":"barchart","col":0,"row":6,"colspan":9,"rowspan":12,"bounds":{"y":33.33333333333333,"x":0,"width":25,"height":66.66666666666666}}
+{"name":"vjqjM","type":"distributionplot","col":9,"row":6,"colspan":9,"rowspan":12,"bounds":{"y":33.33333333333333,"x":25,"width":25,"height":66.66666666666666}}
+{"name":"Cpmhs","type":"action-button","col":34,"row":0,"colspan":2,"rowspan":1,"bounds":{"y":0,"x":94.44444444444444,"width":5.555555555555555,"height":5.555555555555555}}
+{"name":"JsVqg","type":"kpi","col":0,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":0,"width":16.666666666666664,"height":16.666666666666664}}
+{"name":"MRFeEJu","type":"kpi","col":6,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":16.666666666666664,"width":16.666666666666664,"height":16.666666666666664}}
+{"name":"jNzM","type":"kpi","col":12,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":33.33333333333333,"width":16.666666666666664,"height":16.666666666666664}}
+{"name":"mmkG","type":"action-button","col":31,"row":0,"colspan":3,"rowspan":1,"bounds":{"y":0,"x":86.11111111111111,"width":8.333333333333332,"height":5.555555555555555}}
+{"name":"mSZybW","type":"text-image","col":0,"row":0,"colspan":7,"rowspan":2,"bounds":{"y":0,"x":0,"width":30.434782608695656,"height":4.761904761904762}}
+{"name":"SLjaZ","type":"text-image","col":19,"row":0,"colspan":4,"rowspan":3,"bounds":{"y":0,"x":82.6086956521739,"width":17.391304347826086,"height":7.142857142857142}}
+{"name":"Qpuhc","type":"map","col":4,"row":3,"colspan":9,"rowspan":8,"bounds":{"y":7.142857142857142,"x":17.391304347826086,"width":39.130434782608695,"height":19.047619047619047}}
+{"name":"PeBGzgU","type":"text-image","col":0,"row":3,"colspan":3,"rowspan":8,"bounds":{"y":7.142857142857142,"x":0,"width":13.043478260869565,"height":19.047619047619047}}
+{"name":"bXaA","type":"barchart","col":14,"row":3,"colspan":9,"rowspan":8,"bounds":{"y":7.142857142857142,"x":60.86956521739131,"width":39.130434782608695,"height":19.047619047619047}}
+{"name":"gFjdGmP","type":"text-image","col":0,"row":13,"colspan":3,"rowspan":8,"bounds":{"y":30.952380952380953,"x":0,"width":13.043478260869565,"height":19.047619047619047}}
+{"name":"kRCKB","type":"distributionplot","col":4,"row":13,"colspan":9,"rowspan":8,"bounds":{"y":30.952380952380953,"x":17.391304347826086,"width":39.130434782608695,"height":19.047619047619047}}
+{"name":"hzAACf","type":"boxplot","col":14,"row":13,"colspan":9,"rowspan":8,"bounds":{"y":30.952380952380953,"x":60.86956521739131,"width":39.130434782608695,"height":19.047619047619047}}
+{"name":"DbNfkk","type":"map","col":14,"row":23,"colspan":9,"rowspan":8,"bounds":{"y":54.761904761904766,"x":60.86956521739131,"width":39.130434782608695,"height":19.047619047619047}}
+{"name":"stcruxs","type":"distributionplot","col":4,"row":23,"colspan":9,"rowspan":8,"bounds":{"y":54.761904761904766,"x":17.391304347826086,"width":39.130434782608695,"height":19.047619047619047}}
+{"name":"vPGjVd","type":"text-image","col":0,"row":23,"colspan":3,"rowspan":8,"bounds":{"y":54.761904761904766,"x":0,"width":13.043478260869565,"height":19.047619047619047}}
+{"name":"31ff7d82-5308-4e37-ba1d-eac9b73c1164","type":"filterpane","col":0,"row":0,"colspan":31,"rowspan":1,"bounds":{"y":0,"x":0,"width":86.11111111111111,"height":5.555555555555555}}
+{"name":"gTt","type":"boxplot","col":18,"row":2,"colspan":18,"rowspan":16,"bounds":{"y":11.11111111111111,"x":50,"width":50,"height":88.88888888888889}}
+{"name":"ghyYUHL","type":"container","col":0,"row":5,"colspan":18,"rowspan":13,"bounds":{"y":27.77777777777778,"x":0,"width":50,"height":72.22222222222221}}
+{"name":"qmNewQ","type":"action-button","col":34,"row":0,"colspan":2,"rowspan":1,"bounds":{"y":0,"x":94.44444444444444,"width":5.555555555555555,"height":5.555555555555555}}
+{"name":"tNxekh","type":"kpi","col":0,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":0,"width":16.666666666666664,"height":16.666666666666664}}
+{"name":"sGmgdQ","type":"kpi","col":6,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":16.666666666666664,"width":16.666666666666664,"height":16.666666666666664}}
+{"name":"98c2be7a-2206-4c30-9c05-cf7d3d1bc2c0","type":"filterpane","col":0,"row":0,"colspan":31,"rowspan":1,"bounds":{"y":0,"x":0,"width":86.11111111111111,"height":5.555555555555555}}
+{"name":"nHLHJ","type":"container","col":19,"row":2,"colspan":17,"rowspan":16,"bounds":{"y":11.11111111111111,"x":52.77777777777778,"width":47.22222222222222,"height":88.88888888888889}}
+{"name":"NXKyFx","type":"container","col":0,"row":6,"colspan":9,"rowspan":12,"bounds":{"y":33.33333333333333,"x":0,"width":25,"height":66.66666666666666}}
+{"name":"yXfeaC","type":"container","col":9,"row":6,"colspan":9,"rowspan":12,"bounds":{"y":33.33333333333333,"x":25,"width":25,"height":66.66666666666666}}
+{"name":"yLdV","type":"action-button","col":34,"row":0,"colspan":2,"rowspan":1,"bounds":{"y":0,"x":94.44444444444444,"width":5.555555555555555,"height":5.555555555555555}}
+{"name":"msjAgZ","type":"kpi","col":0,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":0,"width":16.666666666666664,"height":16.666666666666664}}
+{"name":"nFcZFay","type":"kpi","col":6,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":16.666666666666664,"width":16.666666666666664,"height":16.666666666666664}}
+{"name":"CjspBv","type":"kpi","col":12,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":33.33333333333333,"width":16.666666666666664,"height":16.666666666666664}}
+{"name":"MPtYey","type":"table","col":0,"row":2,"colspan":36,"rowspan":16,"bounds":{"y":11.11111111111111,"x":0,"width":100,"height":88.88888888888889}}
+{"name":"Jjufb","type":"filterpane","col":0,"row":0,"colspan":31,"rowspan":1,"bounds":{"y":0,"x":0,"width":86.11111111111111,"height":5.555555555555555}}
+{"name":"BjKRyc","type":"action-button","col":34,"row":0,"colspan":2,"rowspan":1,"bounds":{"y":0,"x":94.44444444444444,"width":5.555555555555555,"height":5.555555555555555}}
+{"name":"8ef96e17-17d2-4e3d-a254-55b2932f7cb4","type":"filterpane","col":0,"row":0,"colspan":31,"rowspan":1,"bounds":{"y":0,"x":0,"width":86.11111111111111,"height":5.555555555555555}}
+{"name":"GXTpHph","type":"pivot-table","col":18,"row":2,"colspan":18,"rowspan":16,"bounds":{"y":11.11111111111111,"x":50,"width":50,"height":88.88888888888889}}
+{"name":"cyRZPLt","type":"container","col":0,"row":8,"colspan":18,"rowspan":10,"bounds":{"y":44.44444444444444,"x":0,"width":50,"height":55.55555555555556}}
+{"name":"fBLvmu","type":"action-button","col":34,"row":0,"colspan":2,"rowspan":1,"bounds":{"y":0,"x":94.44444444444444,"width":5.555555555555555,"height":5.555555555555555}}
+{"name":"gjzeksF","type":"pivot-table","col":7,"row":2,"colspan":11,"rowspan":6,"bounds":{"y":11.11111111111111,"x":19.444444444444446,"width":30.555555555555557,"height":33.33333333333333}}
+{"name":"JNpPpR","type":"kpi","col":0,"row":2,"colspan":5,"rowspan":3,"bounds":{"y":11.11111111111111,"x":0,"width":13.88888888888889,"height":16.666666666666664}}
+{"name":"QQJrHQj","type":"kpi","col":0,"row":5,"colspan":5,"rowspan":3,"bounds":{"y":27.77777777777778,"x":0,"width":13.88888888888889,"height":16.666666666666664}}
+{"name":"112bab17-fecd-4e0c-8b66-93f76019e15a","type":"filterpane","col":0,"row":0,"colspan":9,"rowspan":1,"bounds":{"y":0,"x":0,"width":25,"height":5.555555555555555}}
+{"name":"sgdswC","type":"container","col":0,"row":6,"colspan":13,"rowspan":12,"bounds":{"y":33.33333333333333,"x":0,"width":36.11111111111111,"height":66.66666666666666}}
+{"name":"jPDJQP","type":"container","col":13,"row":2,"colspan":23,"rowspan":16,"bounds":{"y":11.11111111111111,"x":36.11111111111111,"width":63.888888888888886,"height":88.88888888888889}}
+{"name":"NQWCa","type":"action-button","col":34,"row":0,"colspan":2,"rowspan":1,"bounds":{"y":0,"x":94.44444444444444,"width":5.555555555555555,"height":5.555555555555555}}
+{"name":"fmQLUY","type":"kpi","col":0,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":0,"width":16.666666666666664,"height":16.666666666666664}}
+{"name":"eJrnDBN","type":"kpi","col":6,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":16.666666666666664,"width":16.666666666666664,"height":16.666666666666664}}
+{"name":"14de7973-44d0-4b18-9816-f84e4673ca57","type":"filterpane","col":0,"row":0,"colspan":31,"rowspan":1,"bounds":{"y":0,"x":0,"width":86.11111111111111,"height":5.555555555555555}}
+{"name":"vehwrC","type":"pivot-table","col":18,"row":2,"colspan":18,"rowspan":16,"bounds":{"y":11.11111111111111,"x":50,"width":50,"height":88.88888888888889}}
+{"name":"UpRPnSK","type":"linechart","col":0,"row":6,"colspan":10,"rowspan":12,"bounds":{"y":33.33333333333333,"x":0,"width":27.77777777777778,"height":66.66666666666666}}
+{"name":"gLfaha","type":"distributionplot","col":10,"row":6,"colspan":8,"rowspan":12,"bounds":{"y":33.33333333333333,"x":27.77777777777778,"width":22.22222222222222,"height":66.66666666666666}}
+{"name":"PMkamK","type":"action-button","col":34,"row":0,"colspan":2,"rowspan":1,"bounds":{"y":0,"x":94.44444444444444,"width":5.555555555555555,"height":5.555555555555555}}
+{"name":"FMjkQg","type":"kpi","col":0,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":0,"width":16.666666666666664,"height":16.666666666666664}}
+{"name":"mjbpV","type":"kpi","col":6,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":16.666666666666664,"width":16.666666666666664,"height":16.666666666666664}}
+{"name":"aKgYL","type":"kpi","col":12,"row":2,"colspan":6,"rowspan":3,"bounds":{"y":11.11111111111111,"x":33.33333333333333,"width":16.666666666666664,"height":16.666666666666664}}
+
+DIMENSIONS
+{"qInfo":{"qId":"HKFUyCx","qType":"dimension"},"qMeta":{"title":"Employee Gender","description":"","tags":[],"_resourcetype":"app.object","_objecttype":"dimension","id":"HKFUyCx","approved":false,"published":false,"owner":"Kya5WRmJdyfJsWK7fzlM91xgtLOaSUmWb9rqu7xZpw0","ownerId":"Og2ApbOee61ta_5qgvdFBa6lieJrZgrK","createdDate":"2023-03-28T16:38:46.701Z","modifiedDate":"2023-03-28T16:38:46.701Z","privileges":["read","update","delete","publish"]},"qData":[]}
+{"qInfo":{"qId":"kfzmHV","qType":"dimension"},"qMeta":{"title":"Employee Gender","description":"","tags":[],"_resourcetype":"app.object","_objecttype":"dimension","id":"kfzmHV","approved":false,"published":false,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.236Z","modifiedDate":"2022-01-07T15:50:12.524Z","privileges":["read","update","delete","publish"]},"qData":[]}
+{"qInfo":{"qId":"QxeNJcP","qType":"dimension"},"qMeta":{"title":"Office","description":"","tags":[],"_resourcetype":"app.object","_objecttype":"dimension","id":"QxeNJcP","approved":false,"published":false,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.161Z","modifiedDate":"2021-12-09T10:46:35.035Z","privileges":["read","update","delete","publish"]},"qData":[]}
+{"qInfo":{"qId":"qttmvQt","qType":"dimension"},"qMeta":{"title":"Employee","description":"","tags":[],"_resourcetype":"app.object","_objecttype":"dimension","id":"qttmvQt","approved":false,"published":false,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.237Z","modifiedDate":"2021-09-22T10:14:50.237Z","privileges":["read","update","delete","publish"]},"qData":[]}
+
+MEASURES
+{"qInfo":{"qId":"qpJkMPX","qType":"measure"},"qMeta":{"title":"Average sickness days per employee","description":"","tags":[],"_resourcetype":"app.object","_objecttype":"measure","id":"qpJkMPX","approved":false,"published":false,"owner":"Kya5WRmJdyfJsWK7fzlM91xgtLOaSUmWb9rqu7xZpw0","ownerId":"Og2ApbOee61ta_5qgvdFBa6lieJrZgrK","createdDate":"2023-03-28T16:29:55.382Z","modifiedDate":"2023-03-28T16:30:15.557Z","privileges":["read","update","delete","publish"]},"qData":[]}
+{"qInfo":{"qId":"GqMEU","qType":"measure"},"qMeta":{"title":"Total sickness days","description":"","tags":[],"_resourcetype":"app.object","_objecttype":"measure","id":"GqMEU","approved":false,"published":false,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.196Z","modifiedDate":"2023-03-28T16:27:45.132Z","privileges":["read","update","delete","publish"]},"qData":[]}
+{"qInfo":{"qId":"zUPVRCZ","qType":"measure"},"qMeta":{"title":"Service Length","description":"","tags":[],"_resourcetype":"app.object","_objecttype":"measure","id":"zUPVRCZ","approved":false,"published":false,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.237Z","modifiedDate":"2023-03-27T18:31:01.987Z","privileges":["read","update","delete","publish"]},"qData":[]}
+{"qInfo":{"qId":"hSvdqN","qType":"measure"},"qMeta":{"title":"Average salary","description":"","tags":[],"_resourcetype":"app.object","_objecttype":"measure","id":"hSvdqN","approved":false,"published":false,"owner":"Kya5WRmJdyfJsWK7fzlM91xgtLOaSUmWb9rqu7xZpw0","ownerId":"Og2ApbOee61ta_5qgvdFBa6lieJrZgrK","createdDate":"2023-03-27T18:05:16.696Z","modifiedDate":"2023-03-27T18:05:16.696Z","privileges":["read","update","delete","publish"]},"qData":[]}
+{"qInfo":{"qId":"nkDeuY","qType":"measure"},"qMeta":{"title":"Staff costs","description":"","tags":[],"_resourcetype":"app.object","_objecttype":"measure","id":"nkDeuY","approved":false,"published":false,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.236Z","modifiedDate":"2023-03-27T18:04:36.531Z","privileges":["read","update","delete","publish"]},"qData":[]}
+{"qInfo":{"qId":"jYKmgN","qType":"measure"},"qMeta":{"title":"Headcount","description":"","tags":[],"_resourcetype":"app.object","_objecttype":"measure","id":"jYKmgN","approved":false,"published":false,"owner":"Kya5WRmJdyfJsWK7fzlM91xgtLOaSUmWb9rqu7xZpw0","ownerId":"Og2ApbOee61ta_5qgvdFBa6lieJrZgrK","createdDate":"2023-03-27T17:58:56.251Z","modifiedDate":"2023-03-27T17:58:56.251Z","privileges":["read","update","delete","publish"]},"qData":[]}
+{"qInfo":{"qId":"AHYLj","qType":"measure"},"qMeta":{"title":"Salary Map","description":"","tags":[],"_resourcetype":"app.object","_objecttype":"measure","id":"AHYLj","approved":false,"published":false,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.376Z","modifiedDate":"2021-12-09T10:43:44.125Z","privileges":["read","update","delete","publish"]},"qData":[]}
+{"qInfo":{"qId":"JexVj","qType":"measure"},"qMeta":{"title":"Annual Leave Days","description":"","tags":[],"_resourcetype":"app.object","_objecttype":"measure","id":"JexVj","approved":false,"published":false,"owner":"Cwpmvp1Cn1ds1PU8ZM421XCaqE9jptcdWcwjN5-H6wI","ownerId":"iNbUUK6XPptVBwpw3a0FAf4Q4SI158sz","createdDate":"2021-09-22T10:14:50.239Z","modifiedDate":"2021-12-09T10:40:33.982Z","privileges":["read","update","delete","publish"]},"qData":[]}
+
+VARIABLES
+{"qName":"vLib","qDefinition":"HR Demo","qMeta":{"privileges":["read","update","delete"]},"qInfo":{"qId":"bbd51576-cc81-4542-9ad0-0bfbc45e5e24","qType":"variable"},"qData":[],"qIsScriptCreated":true}
+{"qName":"vKomment","qMeta":{"privileges":["read","update","delete"]},"qInfo":{"qId":"c75e6339-3663-4a68-a5a7-6c9dd3292098","qType":"variable"},"qData":[],"qIsScriptCreated":true}
+{"qName":"vFactFieldNames","qDefinition":"[Employee ID],[Annual Leave Start_Tmp] as [Annual Leave Start],[Annual Leave End_Tmp] as [Annual Leave End],[Status_Tmp] as [Status],[Comments_Tmp] as [Comments],[Notification],[ALRequests.__State.Tmp] as [ALRequests.__State]","qMeta":{"privileges":["read","update","delete"]},"qInfo":{"qId":"625046f1-1d35-4099-a7c2-efd7a8d89cbc","qType":"variable"},"qData":[],"qIsScriptCreated":true}
+{"qName":"i","qDefinition":"8","qMeta":{"privileges":["read","update","delete"]},"qInfo":{"qId":"39f0efc5-a0fe-43cb-ac31-677fd394a7f5","qType":"variable"},"qData":[],"qIsScriptCreated":true}
+{"qName":"sheet","qDefinition":"e204c5f5-b5a3-4824-97a9-9ec787ee66e8","qMeta":{"privileges":["read","update","delete"]},"qInfo":{"qId":"3b411b5b-7622-446e-ad53-eb0b6357c452","qType":"variable"},"qData":[]}
+{"qName":"vEmployee","qDefinition":"ONLY([Employee Name])\n","qMeta":{"privileges":["read","update","delete"]},"qInfo":{"qId":"0886e8c7-52a9-415a-a676-f21aacbe7e4a","qType":"variable"},"qData":[]}
+{"qName":"vKaptainURL","qDefinition":"='https:\/\/demo.catalysthost.cloud:8000'","qMeta":{"privileges":["read","update","delete"]},"qInfo":{"qId":"7f1a6de7-1386-4240-a4c4-074e5952faaa","qType":"variable"},"qData":[]}
+{"qName":"MaxDate","qDefinition":"=MAX(TIMESTAMP#([Komment_1637157499848.CreatedAt]))","qMeta":{"privileges":["read","update","delete"]},"qInfo":{"qId":"ed8d4bc7-1b84-4228-9feb-4f3f594f309e","qType":"variable"},"qData":[]}
+
+FIELDS
+{"qIsHidden":true,"qIsSystem":true,"qName":"$Field","qCardinal":57,"qTags":["$key","$hidden","$system","$ascii","$text"],"qSrcTables":[]}
+{"qIsHidden":true,"qIsSystem":true,"qName":"$Table","qCardinal":10,"qTags":["$key","$hidden","$system","$ascii","$text"],"qSrcTables":[]}
+{"qIsHidden":true,"qIsSystem":true,"qName":"$Rows","qCardinal":9,"qTags":["$hidden","$system","$numeric","$integer"],"qSrcTables":[]}
+{"qIsHidden":true,"qIsSystem":true,"qName":"$Fields","qCardinal":7,"qTags":["$hidden","$system","$numeric","$integer"],"qSrcTables":[]}
+{"qIsHidden":true,"qIsSystem":true,"qName":"$FieldNo","qCardinal":19,"qTags":["$hidden","$system","$numeric","$integer"],"qSrcTables":[]}
+{"qIsHidden":true,"qIsSystem":true,"qName":"$Info","qCardinal":1,"qTags":["$hidden","$system","$ascii","$text"],"qSrcTables":[]}
+{"qName":"Employee ID","qCardinal":71,"qTags":["$key","$numeric","$integer"],"qSrcTables":["HOLIDAYS","TRAINING","SICKNESS","Komment_1637148061085","EMPLOYEE","Komment_1637157499848","ALRequests"]}
+{"qName":"Employee Name","qCardinal":71,"qTags":["$ascii","$text"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee DoB","qCardinal":71,"qTags":[],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee Age","qCardinal":41,"qTags":["$numeric","$integer"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee Age Band","qCardinal":6,"qTags":["$numeric","$integer"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Office ID","qCardinal":4,"qTags":["$key","$numeric","$integer"],"qSrcTables":["OFFICE","HISTORIC","LEAVERS","EMPLOYEE"]}
+{"qName":"Employee Role","qCardinal":6,"qTags":["$ascii","$text"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee Job Title","qCardinal":13,"qTags":["$ascii","$text"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee Salary","qCardinal":56,"qTags":["$numeric"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee Continuous Service","qCardinal":18,"qTags":["$numeric","$integer"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee DBS Status","qCardinal":3,"qTags":["$ascii","$text"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee Next DBS Check Date","qCardinal":71,"qTags":["$numeric","$integer","$timestamp","$date"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee Manager ID","qCardinal":17,"qTags":["$numeric","$integer"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee Gender","qCardinal":2,"qTags":["$ascii","$text"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee Home Lat","qCardinal":71,"qTags":["$numeric"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee Home Lon","qCardinal":71,"qTags":["$numeric"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee Rollover","qCardinal":7,"qTags":["$numeric","$integer"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Employee Homeworker","qCardinal":3,"qTags":["$ascii","$text"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Office Name","qCardinal":4,"qTags":["$ascii","$text"],"qSrcTables":["OFFICE"]}
+{"qName":"Office Lat","qCardinal":4,"qTags":["$numeric"],"qSrcTables":["OFFICE"]}
+{"qName":"Office Lon","qCardinal":4,"qTags":["$numeric"],"qSrcTables":["OFFICE"]}
+{"qName":"Annual Leave Month","qCardinal":12,"qTags":["$ascii","$text"],"qSrcTables":["HOLIDAYS"]}
+{"qName":"Annual Leave Days","qCardinal":15,"qTags":["$numeric","$integer"],"qSrcTables":["HOLIDAYS"]}
+{"qName":"Historic Date","qCardinal":37,"qTags":["$ascii","$text"],"qSrcTables":["HISTORIC"]}
+{"qName":"Employee Count","qCardinal":23,"qTags":["$numeric","$integer"],"qSrcTables":["HISTORIC"]}
+{"qName":"Leavers Date","qCardinal":37,"qTags":["$ascii","$text"],"qSrcTables":["LEAVERS"]}
+{"qName":"Leaver Count","qCardinal":4,"qTags":["$numeric","$integer"],"qSrcTables":["LEAVERS"]}
+{"qName":"Leavers Year","qCardinal":4,"qTags":["$numeric","$integer"],"qSrcTables":["LEAVERS"]}
+{"qName":"Course","qCardinal":8,"qTags":["$ascii","$text"],"qSrcTables":["TRAINING"]}
+{"qName":"Flag Completed Course","qCardinal":2,"qTags":["$numeric","$integer"],"qSrcTables":["TRAINING"]}
+{"qName":"Course Delivery","qCardinal":2,"qTags":["$ascii","$text"],"qSrcTables":["TRAINING"]}
+{"qName":"Mandatory","qCardinal":2,"qTags":["$ascii","$text"],"qSrcTables":["TRAINING"]}
+{"qName":"Sickness Year","qCardinal":5,"qTags":["$numeric","$integer"],"qSrcTables":["SICKNESS"]}
+{"qName":"Sickness Days Off","qCardinal":10,"qTags":["$numeric","$integer"],"qSrcTables":["SICKNESS"]}
+{"qName":"Annual Leave Start","qCardinal":10,"qTags":[],"qSrcTables":["ALRequests"]}
+{"qName":"Annual Leave End","qCardinal":10,"qTags":[],"qSrcTables":["ALRequests"]}
+{"qName":"Status","qCardinal":3,"qTags":["$ascii","$text"],"qSrcTables":["ALRequests"]}
+{"qName":"Comments","qCardinal":7,"qTags":["$ascii","$text"],"qSrcTables":["ALRequests"]}
+{"qName":"Notification","qCardinal":1,"qTags":["$ascii","$text"],"qSrcTables":["ALRequests"]}
+{"qName":"Komment_1637148061085.Employee Name","qCardinal":20,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637148061085"]}
+{"qName":"Komment_1637148061085.Employee Job Title","qCardinal":8,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637148061085"]}
+{"qName":"Komment_1637148061085.Employee Gender","qCardinal":2,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637148061085"]}
+{"qName":"Komment_1637148061085.Employee DoB","qCardinal":5,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637148061085"]}
+{"qName":"Komment_1637148061085.Employee Salary","qCardinal":18,"qTags":["$numeric"],"qSrcTables":["Komment_1637148061085"]}
+{"qName":"Komment_1637148061085.Employee Homeworker","qCardinal":2,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637148061085"]}
+{"qName":"Komment_1637148061085.CreatedAt","qCardinal":20,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637148061085"]}
+{"qName":"Komment_1637148061085.CreatedBy","qCardinal":1,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637148061085"]}
+{"qName":"Komment_1637148061085.__State","qCardinal":1,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637148061085"]}
+{"qName":"EMPLOYEE.__State","qCardinal":2,"qTags":["$ascii","$text"],"qSrcTables":["EMPLOYEE"]}
+{"qName":"Komment_1637157499848.Annual Leave Start","qCardinal":8,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637157499848"]}
+{"qName":"Komment_1637157499848.Annual Leave End","qCardinal":8,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637157499848"]}
+{"qName":"Komment_1637157499848.Status","qCardinal":3,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637157499848"]}
+{"qName":"Komment_1637157499848.Comments","qCardinal":7,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637157499848"]}
+{"qName":"Komment_1637157499848.CreatedAt","qCardinal":8,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637157499848"]}
+{"qName":"Komment_1637157499848.CreatedBy","qCardinal":2,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637157499848"]}
+{"qName":"Komment_1637157499848.__State","qCardinal":1,"qTags":["$ascii","$text"],"qSrcTables":["Komment_1637157499848"]}
+{"qName":"ALRequests.__State","qCardinal":2,"qTags":["$ascii","$text"],"qSrcTables":["ALRequests"]}
