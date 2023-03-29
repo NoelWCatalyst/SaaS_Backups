@@ -151,7 +151,7 @@ FROM [lib://Shared Build Space:DataFiles/AL.xlsx]
 
     [Komment_1637148061085]:
     LOAD
-      null() AS [Employee ID],
+      	null() AS [Employee ID],
     	null() AS [Komment_1637148061085.Employee Name],
 	null() AS [Komment_1637148061085.Employee Job Title],
 	null() AS [Komment_1637148061085.Employee Gender],
@@ -165,6 +165,9 @@ FROM [lib://Shared Build Space:DataFiles/AL.xlsx]
 
     
     LIB CONNECT TO 'Kaptain';
+    
+    
+    
     RestConnectorMasterTable:
     REPLACE
     SQL SELECT
