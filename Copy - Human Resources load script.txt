@@ -21,20 +21,20 @@ SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;
 
 LET vLib = 'HR Demo';
 ///$tab MAPS
-// MAP_EmployeeID_To_Status:
-// MAPPING
-// LOAD
-//     "Churn Employee ID",
-//     if("Churn Employee Status_Current"<=0.8,'At Risk','No Risk')
-// FROM [lib://Shared Build Space:DataFiles/StaffChurn_Prediction.qvd]
-// (qvd);
+MAP_EmployeeID_To_Status:
+MAPPING
+LOAD
+    "Churn Employee ID",
+    if("Churn Employee Status_Current"<=0.8,'At Risk','No Risk')
+FROM [lib://Shared Build Space:DataFiles/StaffChurn_Prediction.qvd]
+(qvd);
 
 
 ///$tab Data
 EMPLOYEE:
 LOAD
     "Employee ID",
-//     applymap('MAP_EmployeeID_To_Status',[Employee ID],'No Risk') as [Employee Churn Risk],
+    applymap('MAP_EmployeeID_To_Status',[Employee ID],'No Risk') as [Employee Churn Risk],
     "Employee Name",
     "Employee DoB",
     AGE(NOW(), "Employee DoB") 				AS [Employee Age],
