@@ -1,0 +1,2056 @@
+///$tab Main
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='£#,##0;-£#,##0';
+SET TimeFormat='hh:mm';
+SET DateFormat='DD/MM/YYYY';
+SET TimestampFormat='DD/MM/YYYY hh:mm';
+SET FirstWeekDay=0;
+SET BrokenWeeks=0;
+SET ReferenceDay=4;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-GB';
+SET CreateSearchIndexOnReload=0;
+
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+
+SET NumericalAbbreviation='3:k;6:M;9:Bn;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+SET HidePrefix='%' ;
+
+
+
+
+
+
+
+///$tab VERSION
+//Inline Table to keep a track of the Version
+
+IF IsPartialReload() = 0 THEN
+
+VERSION:
+LOAD * INLINE  
+[
+VERSION, 	DATE, 		DESCRIPTION, 					UPDATED BY
+0.1,		20201006, 	INTIIAL DEV,					FM
+0.2, 		20201007, 	WRITEBACK, 						JR
+];
+
+//Write to a Variable that can be stored in the App front end
+
+Let vVersion = Peek('VERSION', -1, 'VERSION');
+
+ENDIF;
+///$tab WRITEBACK
+// The code below loads the Writeback data. Inserts are loaded first, followed by the Original file. We then find the latest Inserts and apply them to the Original file,
+// giving us the latest data.
+//IF IsPartialReload() <> 0 THEN
+
+LIB CONNECT TO 'Microsoft SQL Server';
+
+Final:
+REPLACE
+LOAD 
+	Request_ID AS [Request ID],
+	Application_Name AS  "Application Name",
+	Enhancement_Request_Description AS "Enhancement Request Description",
+	Enhancement_Name AS "Enhancement Name",
+	Requestor_Department AS "Requestor Department",
+	Requestor_Name AS "Requestor Name",
+    "Target_Date"																							AS "Target Date?",
+	CreatedAtDate AS CreatedAtDate,
+	Priority, 
+	Completed_Date AS [Completed Date],
+	Latest_Update AS [Latest Update],
+	Status, 
+	LatestCreatedBy, 
+	LatestCreatedAt;
+
+[Enhancements]:
+SELECT "Request_ID",
+	"Application_Name",
+	"Enhancement_Request_Description",
+	"Enhancement_Name",
+	"Requestor_Department",
+	"Requestor_Name",
+	"Target_Date",
+	CreatedAtDate,
+	Priority,
+	"Completed_Date",
+	"Latest_Update",
+	Status,
+	LatestCreatedBy,
+	LatestCreatedAt
+FROM Writeback.dbo.Enhancements;
+
+
+
+//Drop Tables
+
+//DROP TABLES Enhancements_Original, Enhancements_Inserts;
+
+//END IF
+
+
+
+
+
+
+///$tab FILTER
+IF IsPartialReload() = 0 THEN
+
+//We want to reduce the amount of data in the application to make it easier to use. 656 branches below used out of 1764
+
+
+Filter:
+Load 
+text(PK_Location) as PK_Location
+Inline [
+PK_Location
+12
+13
+23
+25
+26
+29
+38
+42
+44
+47
+48
+50
+52
+53
+54
+55
+56
+57
+58
+59
+61
+62
+67
+68
+69
+71
+73
+75
+76
+80
+87
+89
+92
+97
+101
+103
+106
+107
+109
+111
+112
+114
+118
+120
+121
+123
+124
+127
+130
+131
+135
+140
+143
+144
+146
+148
+153
+154
+156
+160
+164
+165
+166
+167
+171
+174
+175
+176
+180
+181
+184
+186
+187
+195
+200
+202
+204
+206
+222
+232
+238
+246
+250
+253
+261
+263
+267
+273
+279
+280
+282
+284
+297
+298
+307
+309
+311
+313
+317
+318
+328
+333
+334
+337
+338
+339
+346
+347
+352
+355
+358
+359
+360
+362
+363
+364
+365
+366
+367
+372
+373
+374
+375
+377
+381
+382
+387
+388
+389
+390
+391
+395
+397
+404
+406
+407
+414
+424
+426
+429
+430
+432
+433
+436
+437
+441
+443
+444
+446
+448
+450
+460
+468
+476
+480
+482
+484
+493
+519
+520
+521
+533
+535
+537
+542
+547
+548
+552
+557
+559
+565
+567
+570
+580
+608
+613
+615
+616
+618
+619
+623
+624
+626
+628
+630
+631
+638
+641
+642
+644
+649
+650
+652
+653
+656
+660
+663
+669
+671
+675
+677
+689
+691
+697
+705
+708
+710
+711
+715
+718
+721
+723
+727
+730
+734
+772
+774
+776
+777
+778
+779
+781
+782
+788
+793
+794
+795
+800
+809
+810
+812
+813
+814
+815
+816
+819
+821
+822
+823
+825
+833
+839
+841
+842
+843
+849
+859
+861
+867
+868
+881
+883
+889
+892
+894
+896
+898
+904
+906
+907
+909
+911
+913
+915
+917
+928
+930
+931
+932
+933
+935
+937
+939
+947
+951
+957
+961
+963
+966
+971
+981
+985
+986
+988
+991
+995
+997
+1003
+1005
+1013
+1026
+1030
+1034
+1036
+1038
+1040
+1046
+1050
+1054
+1075
+1078
+1079
+1085
+1089
+1094
+1096
+1098
+1102
+1106
+1110
+1111
+1112
+1118
+1120
+1122
+1132
+1136
+1142
+1143
+1145
+1155
+1157
+1159
+1160
+1167
+1171
+1173
+1177
+1183
+1189
+1191
+1193
+1200
+1201
+1202
+1204
+1205
+1206
+1207
+1208
+1209
+1216
+1220
+1222
+1224
+1226
+1232
+1236
+1237
+1238
+1252
+1254
+1257
+1260
+1262
+1266
+1270
+1271
+1272
+1274
+1275
+1281
+1283
+1284
+1286
+1288
+1290
+1291
+1292
+1293
+1294
+1295
+1296
+1297
+1298
+1302
+1303
+1305
+1309
+1310
+1313
+1315
+1317
+1319
+1322
+1324
+1331
+1332
+1335
+1337
+1338
+1339
+1344
+1345
+1347
+1348
+1349
+1351
+1357
+1358
+1359
+1366
+1367
+1369
+1373
+1379
+1380
+1382
+1385
+1392
+1394
+1395
+1397
+1401
+1402
+1404
+1407
+1410
+1413
+1414
+1416
+1418
+1422
+1423
+1426
+1432
+1434
+1441
+1442
+1443
+1445
+1451
+1453
+1461
+1462
+1467
+1468
+1469
+1470
+1472
+1480
+1483
+1484
+1487
+1491
+1494
+1503
+1508
+1513
+1522
+1526
+1527
+1530
+1534
+1537
+1542
+1546
+1549
+1556
+1557
+1559
+1568
+1575
+1580
+1585
+1587
+1588
+1590
+1591
+1592
+1595
+1596
+1598
+1605
+1606
+1614
+1615
+1618
+1625
+1630
+1635
+1641
+1661
+1668
+1670
+1672
+1674
+1675
+1676
+1677
+1680
+1683
+1686
+1687
+1689
+1699
+1703
+1707
+1708
+1709
+1712
+1717
+1719
+1721
+1723
+1725
+1728
+1732
+1735
+1740
+1741
+1745
+1747
+1752
+1754
+1764
+1767
+1773
+1777
+1793
+1797
+1798
+1803
+1811
+1813
+1815
+1819
+1825
+1835
+1839
+1842
+1898
+1926
+1927
+1934
+1935
+1937
+1938
+1940
+1942
+1943
+1951
+1954
+1957
+1965
+1966
+1972
+1973
+1978
+1981
+1984
+1986
+1988
+1995
+1996
+1998
+2000
+2002
+2008
+2011
+2013
+2018
+2019
+2021
+2023
+2030
+2031
+];
+
+ENDIF;
+
+
+///$tab INLINE
+IF IsPartialReload() = 0 THEN
+
+
+
+%Dimensions:
+LOAD * Inline [
+%Dimensions
+Customer Group Name
+Customer Name
+Product Level 1 Description
+Product Level 2 Description
+Product Level 3 Description
+Product Description
+Product Code
+Product Vehicle Manufacturer
+Location Name
+Location Region Director Name
+Location Region Code
+Location Region Name
+Location Manager Name
+Supplier Name
+Customer Segmentation 1
+Customer Segmentation 2
+Month Year
+];
+
+
+%ParetoGroup:
+LOAD * Inline [
+%ParetoGroup
+0-10%
+10-20%
+20-30%
+30-40%
+40-50%
+50-60%
+60-70%
+70-80%
+80-90%
+90-100%
+];
+
+%DashboardDimension1:
+LOAD * Inline [
+%DashboardDimension1
+Product Level 3
+Customer Group 
+Location 
+Suppliers
+Regional Directors
+];
+
+
+
+END IF
+
+///$tab SALES
+IF IsPartialReload() = 0 THEN
+
+SALES:
+LOAD
+   *
+FROM [lib://QVD-Data/QVD - Transform/Sales/Sales_2020.QVD]
+(qvd) where exists(PK_Location);
+
+Concatenate(SALES)
+
+LOAD
+   *
+FROM [lib://QVD-Data/QVD - Transform/Sales/Sales_2019.QVD]
+(qvd) where exists(PK_Location);
+
+Concatenate(SALES)
+
+LOAD
+   *
+FROM [lib://QVD-Data/QVD - Transform/Sales/Sales_2018.QVD]
+(qvd) where exists(PK_Location);
+
+
+
+
+END IF
+///$tab DELIVERIES
+IF IsPartialReload() = 0 THEN
+
+Concatenate(SALES)
+LOAD
+    *
+FROM [lib://QVD-Data/QVD - Transform/Deliveries/Delivery.QVD]
+(qvd);
+
+END IF
+
+
+///$tab CALENDAR
+  
+  IF IsPartialReload() = 0 THEN
+  
+  TRACE  >>>>>> Building Calendar ...;
+
+// 	MinMax:
+// 	LOAD 
+//     	min([Date]) AS Min,
+//     	max([Date]) AS Max
+//     RESIDENT SALES;
+
+	Let vMin = num('2018-01-01')-1;//peek('Min',0,'MinMax');
+    Let vMax = num(Date(today()-1,'YYYY-MM-DD'));//num(Date('2021-07-23','YYYY-MM-DD'));//num(Date(today()-1,'YYYY-MM-DD'));//peek('Max',0,'MinMax');
+    
+    LET vDiff = $(vMax) - num(Date('2020-07-23','YYYY-MM-DD'));
+
+	TRACE BUILD CALENDAR FROM $(vMin) TO $(vMax);
+
+
+
+    LET vRowsToCreate = num('$(vMax)'-'$(vMin)')+1;
+    LET varToday = Num(today());  
+    
+    TRACE $(vRowsToCreate);
+
+
+
+     CALENDAR:
+     LOAD
+         CalDate,
+         date(CalDate,'YYYY-MM-DD')             		                       as [PK_Calendar],
+         
+         Year(CalDate)                                                          as [Year],
+         
+         QuarterName(CalDate)                                                   as [Quarter Year],
+         left(QuarterName(CalDate),7)                                           as [Quarter],
+         
+         Month(CalDate)                                                         as [Month],
+         Month(CalDate) & ' ' & year(CalDate)                                   as [Month Year],
+		 NUM(MONTH(CalDate))                                   					as [Month Number],
+         
+         Week(CalDate)                                                          as [Week],
+         WeekStart(CalDate)                                                     as [W/C],
+         WeekEnd(CalDate)                                                       as [W/E],
+         Week(CalDate)& ' ' & year(CalDate)                                     as [Week Year],
+         
+         weekday(CalDate)     													as [Day of Week],
+         day(CalDate)                                                           as [Day of Month],
+         DayNumberOfYear(CalDate)												AS [Day of Year]	
+         ;
+    LOAD
+         $(vMin)+recno()-1 as [CalDate]
+    AUTOGENERATE ($(vRowsToCreate));
+	
+    
+    LEFT JOIN(CALENDAR) 
+    LOAD
+        PK_Calendar + $(vDiff) AS PK_Calendar,
+        "Calendar Period",
+        "Calendar PeriodIndex",
+        "Calendar Week",
+        "Calendar WeekIndex"
+    FROM [lib://QVD-Data/QVD - Transform/Dimensions/Calendar.QVD]
+    (qvd);
+
+
+    
+    
+    
+END IF
+
+
+
+
+
+
+///$tab DIMENSIONS
+IF IsPartialReload() = 0 THEN
+
+Customer:
+LOAD
+    *
+FROM [lib://QVD-Data/QVD - Transform/Dimensions/Customer.QVD]
+(qvd) where exists (PK_Customer);
+
+Location:
+LOAD
+    *
+FROM [lib://QVD-Data/QVD - Transform/Dimensions/Location.QVD]
+(qvd) where exists (PK_Location);
+
+
+Supplier:
+LOAD
+    *
+FROM [lib://QVD-Data/QVD - Transform/Dimensions/Supplier.QVD]
+(qvd) where exists (PK_Supplier);
+
+
+Product:
+LOAD
+    *
+FROM [lib://QVD-Data/QVD - Transform/Dimensions/Product.QVD]
+(qvd) where exists (PK_Product);
+
+END IF
+///$tab BUDGETS
+//If there is a full reload the Budget data resets to the original Budget values which resets the demo
+//IF IsPartialReload() <> 0 THEN
+
+LET vTable = 'AOP';
+LET vTablePrefix = 'AOP';
+
+//Load Budget File
+Budgets:
+REPLACE
+LOAD
+    PK_Budget,
+    "AOP Sales",
+    "AOP Margin",
+    NULL()                                            					 AS [AOP Latest Update],
+    NULL()                                           					 AS [AOP Created At],
+    NULL()                                           					 AS [AOP Created By]
+	FROM [lib://QVD-Data/Config/Budget Data File.QVD]
+	(qvd);
+
+//ENDIF;
+
+
+
+
+
+ 
+  
+ 
+///$tab DISTRIBUTION CENTRES
+IF IsPartialReload() = 0 THEN
+//Script to geomap new distribution centres and drive time
+
+Distribution_CentreTemp:
+LOAD 
+RowNo() AS PK_Distribution_Centre,
+[Distribution_Centre Name],
+UPPER(Postcode) AS Postcode
+INLINE [
+Postcode,	 Distribution_Centre Name
+LS10 1AB, 	 Leeds
+G1 3SL,		 Glasgow
+BA22 7JE, 	 Yeovil
+AL1 2RJ,     St Albans
+];
+
+
+
+LEFT JOIN(Distribution_CentreTemp)
+load
+	postcode AS Postcode,
+    latitude,
+    longitude
+FROM [lib://QVD-Data/Config/ukpostcodes.csv]
+(txt, utf8, embedded labels, delimiter is ',', msq);
+
+NoConcatenate
+
+Distribution_Centre:
+LOAD DISTINCT
+PK_Distribution_Centre,
+[Distribution_Centre Name],
+GeoMakePoint(latitude, longitude) AS [Distribution_Centre]
+Resident Distribution_CentreTemp;
+
+DROP TABLE Distribution_CentreTemp;
+
+
+LIB CONNECT TO 'GeoAnalytics (365_fawad.mohammed@catalyst-it.co.uk)';
+
+
+
+//////////////////////////******************************20 MILE DISTANCE AREA**********************************************************///////////
+//LIB CONNECT TO 'GeoAnalytics (ph_catalyst)';
+
+Minutes:
+LOAD * INLINE [
+MinutesLoop, Minutes
+30		   , 30 Minutes
+60		   , 1 Hour
+90		   , 1 Hour 30 Minutes
+120		   , 2 Hours
+];
+
+/*
+150		   , 2 Hours 30 Minutes
+180		   , 3 Hours
+
+*/
+
+
+
+LET vNumRows = NoOfRows('Minutes');
+FOR x=0 to $(vNumRows)-1
+
+	LET vMinutesLoop		 = Peek('MinutesLoop',$(x),'Minutes');
+    LET vMinutes			 = Peek('Minutes',$(x),'Minutes');
+
+	TRACE LOOPING FOR: $(vMinutes) AND LOOPS IN TOTAL $(vNumRows);
+    TRACE $(vMinutesLoop);
+   
+   
+  
+   
+
+/* Generated by GeoAnalytics for operation TravelAreas ---------------------- */
+[_inlineMap_]:
+mapping LOAD * inline [
+_char_, _utf_
+"'", '\u0027'
+'"', '\u0022'
+"[", '\u005b'
+"/", '\u002f'
+"*", '\u002a'
+";", '\u003b'
+"}", '\u007d'
+"{", '\u007b'
+"`", '\u0060'
+"´", '\u00b4'
+"	", '\u0009'
+];
+
+IF FieldNumber('PK_Distribution_Centre', 'Distribution_Centre') = 0 THEN
+	call InvalidInlineData('The field PK_Distribution_Centre in Distribution_Centre is not available');
+END IF
+IF FieldNumber('Distribution_Centre', 'Distribution_Centre') = 0 THEN
+	call InvalidInlineData('The field Distribution_Centre in Distribution_Centre is not available');
+END IF
+Let [DatasetInlineTable] = 'PK_Distribution_Centre' & Chr(9) & 'Distribution_Centre';
+Let numRows = NoOfRows('Distribution_Centre');
+Let chunkSize = 1000;
+Let chunks = numRows/chunkSize;
+For n = 0 to chunks
+	Let chunkText = '';
+	Let chunk = n*chunkSize;
+	For i = 0 To chunkSize-1
+		Let row = '';
+		Let rowNr = chunk+i;
+		Exit for when rowNr >= numRows;
+		For Each f In 'PK_Distribution_Centre', 'Distribution_Centre'
+			row = row & Chr(9) & MapSubString('_inlineMap_', Peek('$(f)', $(rowNr), 'Distribution_Centre'));
+		Next
+		chunkText = chunkText & Chr(10) & Mid('$(row)', 2);
+	Next
+	[DatasetInlineTable] = [DatasetInlineTable] & chunkText;
+Next
+chunkText=''
+
+
+[TravelAreas]:
+Load
+'$(vMinutes)' AS %Minutes,
+*;
+SQL SELECT [PK_Distribution_Centre], [Dataset_TravelArea], [Dataset_Origin], [Dataset_Cost], [Dataset_CostUnit], [Dataset_Status] FROM TravelAreas(costValue='$(vMinutesLoop)', costField='', costUnit='Minutes', transportation='truck', dataset='Dataset')
+DATASOURCE Dataset INLINE tableName='Distribution_Centre', tableFields='PK_Distribution_Centre,Distribution_Centre', geometryType='POINT', loadDistinct='NO', suffix='', crs='Auto' {$(DatasetInlineTable)}
+[Dataset]:
+SQL LOAD * FROM Dataset;
+tag field [PK_Distribution_Centre] with '$primarykey';
+tag field [Dataset_TravelArea] with '$geopolygon';
+tag field [PK_Distribution_Centre] with '$geoname';
+tag field [Dataset_TravelArea] with '$relates_PK_Distribution_Centre';
+tag field [PK_Distribution_Centre] with '$relates_Dataset_TravelArea';
+tag field [PK_Distribution_Centre] with '$primarykey';
+tag field [Distribution_Centre] with '$geopoint';
+tag field [PK_Distribution_Centre] with '$geoname';
+tag field [Distribution_Centre] with '$relates_PK_Distribution_Centre';
+tag field [PK_Distribution_Centre] with '$relates_Distribution_Centre';
+
+[DatasetInlineTable] = '';
+
+/* End GeoAnalytics operation TravelAreas ----------------------------------- */
+
+
+Next x;
+
+DROP TABLE Minutes;
+
+
+ENDIF;
+
+
+
+///$tab CUSTOMER CHURN
+IF IsPartialReload() = 0 THEN
+
+[Customer Purchase Frequency Tmp]:
+Load distinct 
+ PK_Calendar as [Customer Purchase Date],
+ [Sales Customer Account Code] AS PK_Customer
+Resident SALES
+Where [Sales Goods Value] > 0;
+ 
+ 
+ 
+ 
+[Customer Purchase Frequency]:
+Load [Customer Purchase Date],
+ PK_Customer,
+ if(PK_Customer <> peek(PK_Customer),0,[Customer Purchase Date] - Peek([Customer Purchase Date])) as [Days Since Last Purchase]
+Resident [Customer Purchase Frequency Tmp]
+Order by PK_Customer,[Customer Purchase Date];
+
+
+DROP Table [Customer Purchase Frequency Tmp];
+
+
+
+[Product Purchase Frequency Tmp]:
+Load distinct 
+ PK_Calendar as [Product Purchase Date],
+ [PK_Product] AS PK_Product
+Resident SALES
+Where [Sales Goods Value] > 0;
+ 
+ 
+ 
+ 
+[Product Purchase Frequency]:
+Load [Product Purchase Date],
+ PK_Product,
+ if(PK_Product <> peek(PK_Product),0,[Product Purchase Date] - Peek([Product Purchase Date])) as [Days Since Last Purchase Product]
+Resident [Product Purchase Frequency Tmp]
+Order by PK_Product,[Product Purchase Date];
+
+
+DROP Table [Product Purchase Frequency Tmp];
+
+ENDIF;
+
+///$tab NP VARS
+LET vTodayFullFormat
+=
+DAY(TODAY())
+&
+IF(DAY(TODAY())>3,'th',IF(DAY(TODAY())=3,'rd',IF(DAY(TODAY())=2,'nd','st')))
+&' '&
+DATE(TODAY(),'MMMM')
+&' '&
+YEAR(TODAY());
+
+LET vThisMonth
+=TEXT(DATE(TODAY(),'MMMM'));
+///$tab EXIT SCRIPT
+SALES_M:
+NoConcatenate LOAD
+    PK_Customer,
+    PK_Location,
+    PK_Product,
+    PK_Calendar + $(vDiff) AS PK_Calendar,
+    PK_Supplier,
+    PK_Budget,
+    "Sales Customer Account Code",
+    "Sales Location Code",
+    "Sales Product Code",
+    "Sales Supplier Code",
+    "Sales Invoice Date",
+    "Sales Invoice Number",
+    "Sales Quantity",
+    "Sales Order Type",
+    "Sales Price Per Item",
+    "Sales Goods Value",
+    "Sales Goods Value Inc Vat",
+    "Sales Individual Cost Price",
+    "Sales Total Cost Price",
+    "Sales Trading Margin",
+    "Sales Delivery Postcode",
+    "Sales Delivery Location",
+    "Sales Delivery Latitude",
+    "Sales Delivery Longitude",
+     PK_Delivery,
+    "Delivery Delivery ID",
+    "Delivery Location Code",
+    "Delivery Customer Code",
+    "Delivery Delivery Date",
+    "Delivery Product Code",
+    "Delivery Ticket Number",
+    "Delivery Month Start Date",
+    "Delivery Geo Travel Area 20 Miles",
+    "Delivery Lat Lon",
+    "Delivery Post Code",
+    "Delivery Latitude",
+    "Delivery Longitude",
+    "Delivery Location Post Code",
+    "Delivery Location Lat Lon",
+    "Delivery Location Distance Meters",
+    "Delivery Location Distance Miles",
+    "Delivery Status",
+    "Delivery Location Duration Seconds",
+    "Delivery Location Duration Minutes",
+    "Delivery Location Path Flows"
+Resident SALES;
+DROP TABLE SALES;
+
+
+
+EXIT SCRIPT;
+///$tab Section
+
+///$tab DAILY SALES
+	//Get the start of the week from 180 days ago
+    
+    LOAD_DATES_TEMP:
+    LOAD
+    [Calendar Date],
+    Date([Calendar Week Start Date],'YYYY-MM-DD') 		AS [Calendar Week Start Date],
+    Num("Calendar Week",'00')&"Calendar Year"			AS [Calendar Week Year]
+    FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Dimensions/Calendar.QVD]
+	(qvd) WHERE [Calendar Date] >=  Date(today()-180,'YYYY-MM-DD') AND [Calendar Date]< Date(today()-1,'YYYY-MM-DD'); /**REMOVE THE -1 FROM TODAY TO GET THE LATEST DATA**/
+    
+	//Get the MinYearWeek as a variable
+    
+    LOAD_MIN_WEEK:
+    LOAD
+    Min([Calendar Week Year]) 							AS [MinYearWeek],
+    Date(Min([Calendar Week Start Date]),'YYYY-MM-DD')	AS [MinYearWeekStartDate]
+    Resident LOAD_DATES_TEMP;
+    
+    
+  	
+  	LET vMinYearWeek 			= Peek('MinYearWeek');
+    LET vMinYearWeekStartDate 	= Peek('MinYearWeekStartDate');
+
+    DROP TABLES LOAD_MIN_WEEK,LOAD_DATES_TEMP;
+
+    
+    //ReExtract Calendar Table to start from the week start date
+    
+    LOAD_DATES:
+    LOAD DISTINCT
+    [Calendar Date],
+    Date([Calendar Week Start Date],'YYYY-MM-DD') 		AS [Calendar Week Start Date]
+    FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Dimensions/Calendar.QVD]
+	(qvd) WHERE Date([Calendar Week Start Date],'YYYY-MM-DD') >= '$(vMinYearWeekStartDate)' AND [Calendar Date]< Date(today()-1,'YYYY-MM-DD');/**REMOVE THE -1 FROM TODAY TO GET THE LATEST DATA**/
+    
+	
+    LET NumRows					= NoOfRows('LOAD_DATES');
+ 
+
+	FOR i=0 to $(NumRows)-1
+  	
+      LET vLOAD_DATE	= Peek('Calendar Date',$(i),'LOAD_DATES');
+      
+      TRACE >>>>> FILE: $(vLOAD_DATE);
+      
+   SALES:
+   LOAD 
+   
+   
+   
+		[Sales Customer Account Code] 									AS [Customer Account Code],
+    	[Sales Location Code]											AS [Location Code], // Note: This is the Invoice Branch
+   		[Sales Product Code] 											AS [Product Code], //Note: This is Sales_Product_Code_Incl_Temporary
+     	[Sales Supplier Code] 											AS [Supplier Code],
+        [Sales Product Code] &'#'& [Sales Location Code]				AS [Mandated List Code],
+        
+        
+        
+     	date([Sales Invoice Date]) 										AS [Sales Invoice Date],
+     	date([Sales Invoice Date]) 										AS [Date],     
+          
+     	"Sales Master Product Code",
+     
+     	"Sales Invoice Number",
+
+     	"Sales Line Key",
+     
+     	"Sales Type Code", 
+    
+     	"Sales Main UOM",
+     	"Sales Quantity In Main UOM",
+     	"Sales Quantity",
+    
+     	"Sales Goods Value",
+     	"Sales VAT Rate",
+     	("Sales VAT Rate"/100) * "Sales Goods Value" 					AS [Sales VAT Amount],
+     	(1+  ("Sales VAT Rate"/100)) * "Sales Goods Value"  			AS [Sales Total Amount],
+     
+     	"Sales Profit Value"											AS [Sales Profit Value],  //RS 04032020 // Goods Value - Cost (held locally)
+     	"Sales Estimated Claimback Value",
+     	"Sales Recal Rebate Value" 										AS "Sales Rebate Value",
+
+	 	"Sales Pricing Trading Margin"									AS "Sales Trading Margin" ,
+	 	
+        "Sales Goods Value" 
+        	- "Sales Profit Value" 										AS "Supplier Spend",
+
+     	"Sales Creator User Code",
+     	"Sales Creator User Name",
+
+     	"Sales Contract Code",
+
+     	"Sales Yard Or Direct",
+     	"Sales Account Or Cash",
+     	"Sales Collected Or Delivered Or Direct",
+    
+     	"Sales Walk In Brand ", 
+     
+     	"Sales Volume UoM Of Product ", 
+    
+     	"Sales Delivery Address Line 1",
+     	"Sales Delivery Address Line 2",
+     	"Sales Delivery Address Line 3",
+     	"Sales Delivery Post Code",
+     	"Sales Delivery Note Number",
+        "Sales Delivery Latitude",
+    	"Sales Delivery Longitude",
+    	"Sales Delivery Location",
+        
+     	"Sales Delivery Confirmed Date",
+     	"Sales Delivery Requested Date",
+
+     	"Sales Customer Order Number",
+
+     	"Sales TP Card Holder" 																									AS "TP Card Holder",
+     	if(isnull("Sales TP Card Number"),"Sales Contract Order Number","Sales TP Card Number")  								AS "TP Card Number", 
+		if(isnull("Sales TP Card Number"),"Sales Contract Order Number","Sales TP Card Number") &' -'&"Sales TP Card Holder"  	AS "TP Card Number - Name",
+
+	 	"Sales Order Date Time",
+
+     	"Sales Unit Price",
+     	"Sales Unit Price UOM",
+     	"Sales VAT Code",
+        
+        "Sales Credit Reason Code",
+        "Sales Order Type",
+        'T' AS [Sales Transactional],
+        [Sales Product Level 2 Code]
+FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Sales/By Invoice Date/$(vLOAD_DATE).QVD] (qvd)
+
+WHERE 
+	"Sales Account Or Cash" <> 'IBT' 
+AND Exists(PK_Location)
+;
+NEXT
+
+
+
+DROP TABLE LOAD_DATES;
+
+
+
+///$tab WEEKLY SALES
+    //Bring in the weekly sales where the Weekly QVD is before vMinYearWeek from the weekly folder
+   //We need to extract 156 weeks which is around 2 years 9 months at a weekly and 3 months transactional
+    
+    
+    //Load from the calendar where the [Calendar Week Start Date] <  vMinYearWeekStartDate
+    
+    LOAD_WEEKS:
+    LOAD DISTINCT
+    	Date([Calendar Week Start Date],'YYYY-MM-DD') 		AS [Calendar Week Start Date],
+    	Num("Calendar Week",'00')&"Calendar Year"			AS [Calendar Week Year]
+    FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Dimensions/Calendar.QVD]
+    (qvd) WHERE 
+    [Calendar Date] >=Date(Today()-1092,'YYYY-MM-DD')
+    AND
+    [Calendar Week Start Date] < '$(vMinYearWeekStartDate)';
+    
+    MINWEEK:
+    LOAD
+    Date(Min([Calendar Week Start Date]),'YYYY-MM-DD') 		AS [Min Calendar Week Start Date]
+    Resident LOAD_WEEKS;
+    
+
+    
+
+	
+    LET NumRows					= NoOfRows('LOAD_WEEKS');
+    LET vWeekYearStartDate		= Peek('Min Calendar Week Start Date');
+    TRACE $(vWeekYearStartDate);
+ 
+    
+    DROP TABLE MINWEEK;
+    
+	FOR i=0 to $(NumRows)-1
+  	
+      LET vWeekYear				= Peek('Calendar Week Year',$(i),'LOAD_WEEKS');
+      
+      
+
+      
+      TRACE >>>>> FILE: $(vWeekYear);
+      
+      Concatenate(SALES)
+      LOAD
+      	PK_Customer												AS [Customer Account Code],
+        PK_Location												AS [Location Code],
+        PK_Product 												AS [Product Code],
+        date(PK_Calendar)										AS [Sales Invoice Date],
+        PK_Supplier 											AS [Supplier Code],
+        PK_Product &'#'& PK_Location							AS [Mandated List Code],	
+        "Sales Yard Or Direct",
+        "Sales Account Or Cash",
+        "Sales Order Type",
+        "Sales Collected Or Delivered Or Direct",
+        "Sales Invoice Number",
+        "Sales Quantity",
+        "Sales Quantity In Main UOM",
+        "Sales Goods Value",
+        "Sales Pricing Trading Margin"							AS "Sales Trading Margin",
+        "Sales Recal Rebate Value"
+     
+      FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Sales/By Week/$(vWeekYear).QVD]
+      (qvd) WHERE  Exists(PK_Location);
+
+      
+      
+      
+      
+      
+      
+      NEXT
+      
+      DROP TABLE LOAD_WEEKS;
+
+	STORE [Customer Account Code], [Location Code], [Product Code], [Supplier Code], [Sales Invoice Date],
+    [Sales Invoice Number],[Sales Goods Value],[Sales Trading Margin], [Sales Quantity],[Sales Order Type]
+    from SALES INTO [lib://QVD Official (tp_catalystadmin)/Sales.txt](txt);
+
+
+    
+
+///$tab OPEN ORDERS
+ Concatenate(SALES)
+
+LOAD
+    date(PK_Calendar)											AS [Sales Invoice Date],
+    PK_Location													AS [Location Code],
+    PK_Product 													AS [Product Code],
+    PK_Customer													AS [Customer Account Code],
+    PK_Supplier													AS [Supplier Code],
+    "Open Order Key",
+    "Open Order Line Key",
+    "Open Order Delivery Note Number",
+    "Open Order Pick Note Number",
+    "Open Order Forward Or Back",
+    "Open Order Customer Account Number",
+    "Open Order Customer Name",
+    "Open Order Customer Order Number",
+    "Open Order Line Number",
+    "Open Order Type",
+    "Open Order Status",
+    "Open Order Location Code",
+    "Open Order Location Description",
+    "Open Order Region",
+    "Open Order Authorised By",
+    "Open Order Date",
+    "Open Order Delivery Date",
+    "Open Order Delivery Address Line 1",
+    "Open Order Delivery Address Line 2",
+    "Open Order Delivery Address Line 3",
+    "Open Order Delivery Address Line 4",
+    "Open Order Contract",
+    "Open Order Product Code",
+    "Open Order Product Desc",
+    "Open Order Product TP Master Level 4 Code",
+    "Open Order Product TP Master Level 4 Desc",
+    "Open Order Product TP Master Level 3 Code",
+    "Open Order Product TP Master Level 3 Desc",
+    "Open Order Product TP Master Level 2 Code",
+    "Open Order Product TP Master Level 2 Desc",
+    "Open Order Product TP Master Level 1 Code",
+    "Open Order Product TP Master Level 1 Desc",
+    "Open Order Location Brand Desc",
+    "Open Order Location RD Area",
+    "Open Order Location Reg Desc",
+    "Open Order Supplier Desc",
+    "Open Order Quantity Ordered",
+    "Open Order Quantity Picked",
+    "Open Order Quantity to Follow",
+    "Open Order Quantity UOM",
+    "Open Order List Price",
+    "Open Order Price UOM",
+    "Open Order Discount Percentage",
+    "Open Order Sell Price",
+    "Open Order Invoice Cost",
+    "Open Order Standard Cost",
+    "Open Order Nett Cost",
+    "Open Order Cost UOM",
+    "Open Order ADC",
+    "Open Order External Claimback",
+    "Open Order Internal Claimback",
+    "Open Order Price Method Code",
+    "Open Order SD Cat Code",
+    "Open Order Pack Code",
+    "Open Order Latest Date",
+    "Open Order Loaded Date",
+    "Open Order Loaded Time",
+    "Open Order Product Type",
+    "Open Order Temp Product Flag",
+    "Open Order Last Bought Supplier Code",
+    "Open Order Manual Product Description",
+    "Open Order RD Code",
+    "Open Order RD Name",
+    "Open Order Age Days",
+    "Open Order Web or Branch" AS [Sales Order Type]
+FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Dimensions/Open_Order.QVD]
+(qvd) WHERE "Open Order Type" <>'IBT'  AND Exists(PK_Location);
+
+
+
+
+
+
+
+
+///$tab MANDATED
+Mandated_Ranges:
+LOAD
+    PK_Product &'#'& PK_Location							AS [Mandated List Code],									
+    //PK_Product 											AS [Product Code],
+    //PK_Location											AS [Location Code],
+    "Mandated Range Code",
+    "Mandated Range Managed List",
+    "Mandated Range Main Or Alternative",
+    "Mandated Range List Owner",
+    "Mandated Range List Type",
+    "Mandated Range List Branch",
+    "Mandated Range List Nation",
+    "Mandated Range List Bar Alts",
+    "Mandated Range Location Code",
+    "Mandated Range Location List"
+FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Dimensions/Mandated_Ranges.QVD]
+(qvd) WHERE "Mandated Range List Branch" = 'T';
+
+
+
+
+
+///$tab SUPPLIER
+SUPPLIER:
+LOAD
+    "Supplier Code",
+    "Supplier Name",
+    "Supplier Post Code",
+    "Supplier Terms Code",
+    "Supplier Created Date",
+    "Supplier Main Major Group",
+    "Supplier Status",
+    "Supplier Lead Days",
+    "Supplier Rebate Flag"
+FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Dimensions/Supplier.QVD]
+(qvd) WHERE EXISTS([Supplier Code]);;
+///$tab PRODUCT
+PRODUCT:
+LOAD
+    "Product Code",
+    "Product Description",
+    "Product Long Description",
+     "Product Type",
+     
+    "Product Active Flag",
+    "Product Active Date",
+    "Product Inactive Date",
+    
+    "Product TPMasterLevel4Code",
+    "Product Vat Code",
+    "Product Exclude From Deals Flag",
+    "Product Mcp Flag",
+    "Product Mcp Component Flag",
+    "Product Stock Category Flag",
+    "Product Warehouse Flag",
+    "Product Cost Supplied By Flag",
+    "Product Security Risk Flag",
+    
+    "Product Volume Uom",
+    "Product Supplier List Price",
+    "Product Tp List Price",
+    "Product Stock Cost Price",
+    "Product Supplier Product Code",
+    "Product Brand Code",
+    "Product Temporary Flag",
+    "Product Main Uom",
+    "Product Pricing Family",
+    "Product PTS SUPP LIST",
+    "Product PTS COST",
+    "Product Cost In Main Uom",
+    
+    "Product Level 4 Code",
+    "Product Level 4",
+    "Product Level 3 Code",
+    "Product Level 3",
+    "Product Level 2 Code",
+    "Product Level 2",
+    "Product Level 1 Code",
+    "Product Level 1",
+    
+    "Product Pricing Family Description",
+    "Product Sold By TP",
+    "Product Sold By CCF",
+    "Product Sold By Keyline",
+    "Product Sold By CPS",
+    "Product Sold By PTS",
+    "Product Sold By Benchmarx",
+    "Product Sold By Connections"
+FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Dimensions/Product.QVD]
+(qvd)
+WHERE EXISTS([Product Code]);
+
+
+
+
+///$tab CUSTOMER
+CUSTOMER:
+LOAD
+    "Customer Account Code",
+    "Customer Managed Service Customer" AS  [Managed Service Customer],	
+    "Customer ID Name",
+    "Customer Name",
+    "Customer Type",
+    
+    "Customer Address 1",
+    "Customer Address 2",
+    "Customer Address 3",
+    "Customer Address 4",
+    "Customer Post Code",
+    
+    "Customer Credit Status Code",
+    "Customer Credit Status",
+    
+    "Customer Rep Code",
+    "Customer Staff Flag",
+    
+    "Customer Brand Code",
+    "Customer Brand",
+    
+    "Customer Acc Opened Date",
+    "Customer Acc Opened DateNum",
+    "Customer Group Code",
+    "Customer Group Name", 
+    "Customer Group Type",
+    
+    "Customer Trade Category",
+    "Customer Incl Mail Flag",
+    "Customer Incl EMail Flag",
+    "Customer Incl Phone Flag",
+    "Customer Incl Group Flag",
+    "Customer Gone Away Flag",
+    
+    "Customer Date Customer Registered on Web",
+    "Customer Is Customer Registered On Web",
+    
+    "Customer Parent Location Code",
+    "Customer Parent Location Name",
+    "Customer Parent Location Brand",
+    "Customer Parent Location Brand Name",
+    "Customer Parent Location Region Code",
+    "Customer Parent Location Region Name",
+    
+    "Customer Rep Name",
+    "Customer Sales Mgr Code",
+    "Customer Sales Mgr Name",
+    "Customer Sales Mgr Region Code",
+    "Customer Sales Mgr Region Name",
+    
+    "Customer Telephone Number",
+    "Customer Main Customer Name" 			AS [Main Customer Name],
+    "Customer Managed Service Rep",
+    "Customer Managed Service Customer BDE",
+    "Customer Managed Service COM",
+    "Customer Managed Service AM",
+    "Customer Segmentation 1",
+    "Customer Segmentation 2",
+    "Customer Single Customer View (SCV)"
+FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Dimensions/Customer.QVD]
+(qvd)
+WHERE EXISTS([Customer Account Code]);
+
+
+
+///$tab LOCATION
+LOCATION:
+LOAD
+
+    "Location Post Code",
+    PK_Location,
+    "Location Code",
+    "Location Name",
+    "Location Address 1",
+    "Location Address 2",
+    "Location Address 3",
+    "Location Address 4",
+    "Location Region ID",
+    "Location Region Code",
+    "Location Region Name",
+    "Location RD Code",
+    "Location RD Name",
+    "Location RD ID",
+    "Location Ops Manager",
+    "Location Manager Name",
+    "Location Name ID",
+    "Location ID Description",
+    "Location Latitude",
+    "Location Longitude",
+    "Location Brand",
+    "Location Brand Description",
+    "Location Active Flag",
+    "Location Latitude Post Code",
+    "Location Longitude Post Code",
+    "Location Location"
+    // GeoMakePoint("Location Latitude", "Location Longitude") 	AS [Location Location]
+FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Dimensions/Location.QVD]
+(qvd) WHERE EXISTS([Location Code]);
+
+///$tab OPEN CONTRACTS
+// CONCATENATE (SALES)
+
+// LOAD
+//     "TH Contract On Hire Days"				AS [Contract On Hire Days],
+//     "TH Contract Total Cost" 				AS [Contract Total Cost],
+//     "TH Contract Customer Account Code"		AS [Customer Account Code], 
+//     "TH Contract Location Code"				AS [Location Code], 
+//     "TH Contract Product Code"				AS [Product Code],
+//     "TH Contract Date"						AS [Date],
+    
+//     "TH Contract Number"					AS [Contract Number], 
+//     "TH Contract Line Number"				AS [Contract Line Number], 
+//     "TH Contract Line Qty"					AS [Contract Line Qty], 
+//     "TH Contract Unit Weekly Rate"			AS [Contract Unit Weekly Rate], 
+//     "TH Contract Total Line Charge" 		AS [Contract Total Line Charge],
+//     "TH Contract On Hire Date" 				AS [Contract On Hire Date],  
+//     "TH Contract Off Hire Date" 			AS [Contract Off Hire Date],   
+//     "TH Contract Collection Qty" 			AS [Contract Collection Qty],  
+//     "TH Contract Status" 					AS [Contract Status], 
+//     "TH Contract Order Number" 				AS [Contract Order Number],  
+//     "TH Contract Site Address" 				AS [Contract Site Address],  
+//     "TH Contract TP Card Number"			AS [TP Card Number],  
+//     "TH Contract TP Card Holder"			AS [TP Card Holder],
+//     "TH Contract Sales Creator User Code"	AS [Sales Creator User Code],
+//     "TH Contract Sales Creator User Name"	AS [Sales Creator User Name]
+// FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Contracts/TH_Contract.QVD]
+// (qvd);
+
+
+
+///$tab Delivery PostCode
+LIB CONNECT TO 'REST Postcode (tp_rachael.selman)';
+
+
+	Postcodes:
+    LOAD DISTINCT
+        replace([Sales Delivery Post Code],' ','%20') 	AS Postcode, 
+        1 												AS [Postcode Counter]
+    RESIDENT Sales;
+    
+    
+    
+LET j = NoOfRows('Postcodes');
+
+TRACE >> $(j) Delivery Postcode Rows;
+
+
+
+FOR i = 0 to $(j)
+
+LET CurrentPostcode = Peek('Postcode', i, 'Postcodes');
+
+    RestConnectorMasterTable:
+    SQL SELECT 
+        "status" AS "status_u0",
+        "match_type",
+        "input",
+        "__KEY_root",
+        (SELECT 
+            "postcode",
+            "status",
+            "usertype",
+            "easting",
+            "northing",
+            "positional_quality_indicator",
+            "country",
+            "latitude",
+            "longitude",
+            "postcode_no_space",
+            "postcode_fixed_width_seven",
+            "postcode_fixed_width_eight",
+            "postcode_area",
+            "postcode_district",
+            "postcode_sector",
+            "outcode",
+            "incode",
+            "__FK_data"
+        FROM "data" FK "__FK_data"),
+        (SELECT 
+            "@Value",
+            "__FK_copyright"
+        FROM "copyright" FK "__FK_copyright" ArrayValueAlias "@Value")
+    FROM JSON (wrap on) "root" PK "__KEY_root"
+    WITH CONNECTION(
+        URL "http://api.getthedata.com/postcode/$(CurrentPostcode)"
+        );
+
+ 
+
+    [data]:
+    LOAD
+        [postcode],
+        [status],
+        [usertype],
+        [easting],
+        [northing],
+        [positional_quality_indicator],
+        [country],
+        [latitude],
+        [longitude],
+        [postcode_no_space],
+        [postcode_fixed_width_seven],
+        [postcode_fixed_width_eight],
+        [postcode_area],
+        [postcode_district],
+        [postcode_sector],
+        [outcode],
+        [incode],
+        [__FK_data] AS [__KEY_root]
+    RESIDENT RestConnectorMasterTable
+    WHERE NOT IsNull([__FK_data]);
+    
+    
+    Postcode_tmp:
+    LOAD
+        postcode 							AS [Sales Delivery Post Code], 
+        latitude 							AS [Sales Delivery Latitude], 
+        [longitude] 						AS [Sales Delivery Longitude],
+        GeoMakePoint(latitude, longitude) 	AS [Sales Delivery Location]
+    RESIDENT data; 
+    
+    DROP TABLE data; 
+    DROP TABLE RestConnectorMasterTable;
+    
+next
+NoConcatenate
+
+Delivery_Postcodes:
+LOAD * Resident Postcode_tmp;
+
+STORE Delivery_Postcodes INTO  
+[lib://Sales QVD Data (tp-qliksense02_catalyst)/Transform QVD/Delivery_Postcodes.qvd] (qvd) ;
+
+
+DROP TABLE Postcode_tmp;
+DROP TABLE Delivery_Postcodes;
+
+///$tab Customer PostCode
+LIB CONNECT TO 'REST Postcode (tp_rachael.selman)';
+
+Postcodes:
+    LOAD DISTINCT
+        replace([Customer Post Code],' ','%20') AS Postcode, 
+        1 AS [Postcode Counter]
+    RESIDENT Customer;
+    
+LET j = NoOfRows('Postcodes');
+
+ TRACE >> $(j) Customer Postcode Rows;
+
+FOR i = 0 to $(j)
+
+ 
+
+LET CurrentPostcode = Peek('Postcode', i, 'Postcodes');
+
+ 
+
+    RestConnectorMasterTable:
+    SQL SELECT 
+        "status" AS "status_u0",
+        "match_type",
+        "input",
+        "__KEY_root",
+        (SELECT 
+            "postcode",
+            "status",
+            "usertype",
+            "easting",
+            "northing",
+            "positional_quality_indicator",
+            "country",
+            "latitude",
+            "longitude",
+            "postcode_no_space",
+            "postcode_fixed_width_seven",
+            "postcode_fixed_width_eight",
+            "postcode_area",
+            "postcode_district",
+            "postcode_sector",
+            "outcode",
+            "incode",
+            "__FK_data"
+        FROM "data" FK "__FK_data"),
+        (SELECT 
+            "@Value",
+            "__FK_copyright"
+        FROM "copyright" FK "__FK_copyright" ArrayValueAlias "@Value")
+    FROM JSON (wrap on) "root" PK "__KEY_root"
+    WITH CONNECTION(
+        URL "http://api.getthedata.com/postcode/$(CurrentPostcode)"
+        );
+
+ 
+
+    [data]:
+    LOAD
+        [postcode],
+        [status],
+        [usertype],
+        [easting],
+        [northing],
+        [positional_quality_indicator],
+        [country],
+        [latitude],
+        [longitude],
+        [postcode_no_space],
+        [postcode_fixed_width_seven],
+        [postcode_fixed_width_eight],
+        [postcode_area],
+        [postcode_district],
+        [postcode_sector],
+        [outcode],
+        [incode],
+        [__FK_data] AS [__KEY_root]
+    RESIDENT RestConnectorMasterTable
+    WHERE NOT IsNull([__FK_data]);
+    
+    Postcode_tmp:
+    LOAD
+        postcode 							AS [Customer Post Code], 
+        latitude 							AS [Customer Latitude], 
+        [longitude] 						AS [Customer Longitude],
+        GeoMakePoint(latitude, longitude) 	AS [Customer Location]
+    RESIDENT data; 
+    
+    DROP TABLE data; 
+    DROP TABLE RestConnectorMasterTable;
+    
+next
+
+NoConcatenate
+Customer_Postcodes:
+LOAD * Resident Postcode_tmp;
+
+STORE Customer_Postcodes INTO  
+[lib://Sales QVD Data (tp-qliksense02_catalyst)/Transform QVD/Customer_Postcodes.qvd] (qvd) ;
+
+
+DROP TABLE Postcode_tmp;
+DROP TABLE Customer_Postcodes;
+
+
+///$tab Location PostCode
+LIB CONNECT TO 'REST Postcode (tp_rachael.selman)';
+
+	Postcodes:
+    LOAD DISTINCT
+        replace([Location Post Code],' ','%20') AS Postcode, 
+        1 AS [Postcode Counter]
+    RESIDENT Location;
+    
+LET j = NoOfRows('Postcodes');
+
+ TRACE >> $(j) Location Postcode Rows;
+
+FOR i = 0 to $(j)
+
+ 
+
+LET CurrentPostcode = Peek('Postcode', i, 'Postcodes');
+
+ 
+
+    RestConnectorMasterTable:
+    SQL SELECT 
+        "status" AS "status_u0",
+        "match_type",
+        "input",
+        "__KEY_root",
+        (SELECT 
+            "postcode",
+            "status",
+            "usertype",
+            "easting",
+            "northing",
+            "positional_quality_indicator",
+            "country",
+            "latitude",
+            "longitude",
+            "postcode_no_space",
+            "postcode_fixed_width_seven",
+            "postcode_fixed_width_eight",
+            "postcode_area",
+            "postcode_district",
+            "postcode_sector",
+            "outcode",
+            "incode",
+            "__FK_data"
+        FROM "data" FK "__FK_data"),
+        (SELECT 
+            "@Value",
+            "__FK_copyright"
+        FROM "copyright" FK "__FK_copyright" ArrayValueAlias "@Value")
+    FROM JSON (wrap on) "root" PK "__KEY_root"
+    WITH CONNECTION(
+        URL "http://api.getthedata.com/postcode/$(CurrentPostcode)"
+        );
+
+ 
+
+    [data]:
+    LOAD
+        [postcode],
+        [status],
+        [usertype],
+        [easting],
+        [northing],
+        [positional_quality_indicator],
+        [country],
+        [latitude],
+        [longitude],
+        [postcode_no_space],
+        [postcode_fixed_width_seven],
+        [postcode_fixed_width_eight],
+        [postcode_area],
+        [postcode_district],
+        [postcode_sector],
+        [outcode],
+        [incode],
+        [__FK_data] AS [__KEY_root]
+    RESIDENT RestConnectorMasterTable
+    WHERE NOT IsNull([__FK_data]);
+    
+    Postcode_tmp:
+    LOAD
+        postcode 							AS [Location Post Code], 
+        latitude 							AS [Location Latitude], 
+        [longitude] 						AS [Location Longitude],
+        GeoMakePoint(latitude, longitude) 	AS [Location]
+    RESIDENT data; 
+    
+    DROP TABLE data; 
+    DROP TABLE RestConnectorMasterTable;
+    
+next
+
+NoConcatenate
+Location_Postcodes:
+LOAD * Resident Postcode_tmp;
+
+STORE Location_Postcodes INTO  
+[lib://Sales QVD Data (tp-qliksense02_catalyst)/Transform QVD/Location_Postcodes.qvd] (qvd) ;
+
+
+DROP TABLE Postcode_tmp;
+DROP TABLE Location_Postcodes;
+
+///$tab STOCK
+// Concatenate (SALES)
+// LOAD
+//     "Stock Availability Date"					AS [Date],
+//     "Stock Availability Location Code"			AS [Location Code],
+//     "Stock Availability Product Code" 			AS [Product Code],
+//     "Stock Availability Loc Mnged Range List",
+//     "Stock Availability Free Greater Than Or Equal To Mpq",
+//     "Stock Availability With Stock Flag",
+//     "Stock Availability Free Qty"
+// FROM [lib://QVD Official (tp_catalystadmin)/QVD - Transform/Contracts/MS_Stock_Avail.QVD]
+// (qvd);
+
